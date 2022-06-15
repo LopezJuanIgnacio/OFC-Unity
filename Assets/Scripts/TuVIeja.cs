@@ -32,4 +32,10 @@ public class TuVIeja : MonoBehaviour
         transform.position= posInicial;
 
     }
+
+    void OnTriggerEnter(Collider col){
+        if(col.gameObject.tag == "Meta"){
+            Debug.Log("Meta");
+        }
+    }
 }
