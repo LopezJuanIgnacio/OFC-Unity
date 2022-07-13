@@ -7,6 +7,7 @@ public class Ia : MonoBehaviour
 {
     NavMeshAgent agent;
     public LayerMask piso;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,5 +25,8 @@ public class Ia : MonoBehaviour
                 agent.SetDestination(info.point);
             }
         }
+
+        if(agent.remainingDistance <= agent.stoppingDistance) animator.SetBool("estaCorriendo", false);
+        else animator.SetBool("estaCorriendo", true);
     }
 }
